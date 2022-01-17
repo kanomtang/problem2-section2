@@ -1,5 +1,63 @@
+// Typograhpy
+.input-wrapper {
+    font-size: 1rem;
+}
+
+// Overide Typography
+::ng-deep .mat-form-field {
+    .mat-form-field-label {
+        font-weight: 500;
+    }
+}
+
+// Style
+.background {
+    background-color: #fbffe2;
+}
+
+.input-wrapper {
+    min-width: 250px;
+    max-width: 900px;
+    width: 95%;
+    margin: 0em auto 1em auto;
+}
+
 table.mat-table {
     border-spacing: 0;
     width: 95%;
     margin: 1em auto;
+}
+
+.position {
+    max-width: 140px;
+    min-width: 140px;
+}
+.category-title {
+    max-width: 400px;
+}
+.full-width {
+    width: 100%;
+    margin-top: 3em;
+}
+
+// Overide design
+::ng-deep .mat-form-field {
+    .mat-input-element {
+        color: #9145b6;
+    }
+    .mat-form-field-label {
+        color: #4c3f91;
+    }
+    .mat-form-field-underline {
+        background-color: red;
+    }
+    .mat-form-field-ripple {
+        background-color: #22577e;
+    }
+    .mat-form-field-required-marker {
+        color: green;
+    }
+    .mat-form-field-flex {
+        background-color: #fff8f3;
+    }
 }
