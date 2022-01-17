@@ -13,6 +13,7 @@ export interface CategoryElement {
 export class AppComponent {
   constructor(private http: HttpClient) {}
   dataSource: Array<CategoryElement> = [];
+  displayData: Array<CategoryElement> = [];
 
   title = 'problem2-section2';
   displayedColumns: string[] = ['position', 'categoryName'];
@@ -25,7 +26,23 @@ export class AppComponent {
         const categories = response as Array<string>;
         categories.forEach((category) => {
           this.dataSource.push({ categoryName: category });
+          this.displayData = [...this.dataSource];
         });
       });
+  }
+
+  onChangeSearchKeyword(searchKeyword) {
+    let filterArray = [...this.dataSource].filter((category) =>
+      category.categoryName.toLowerCase().includes(searchKeyword.toLowerCase())
+    );
+    this.displayCategoriesData = filterArray;
+  }
+
+  get displayCategoriesData() {
+    return this.displayData;
+  }
+
+  set displayCategoriesData(data: Array<CategoryElement>) {
+    this.displayData = data;
   }
 }
